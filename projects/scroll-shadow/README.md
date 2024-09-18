@@ -10,13 +10,13 @@ Unlike the pure CSS solution, this solution uses a wrapper and absolutely positi
 npm install @marekskopal/ng-scroll-shadow
 ```
 
-Add the styles to your `styles.scss`:
+## Usage
+
+Import the styles to your `styles.scss`:
 
 ```scss
-@import "~@marekskopal/ng-scroll-shadow/styles/styles";
+@import '@marekskopal/ng-scroll-shadow';
 ```
-
-## Usage
 
 Import the `ScrollShadowDirective` directive in your module or component:
 

@@ -1,6 +1,6 @@
 {
   "name": "@marekskopal/ng-scroll-shadow",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Angular directive for adding a shadow to scrollable container.",
   "keywords": [
     "angular",
@@ -26,15 +26,8 @@
     "build:sass": "sass src/styles/styles.scss assets/styles.css"
   },
   "exports": {
-    "./package.json": {
-      "default": "./package.json"
-    },
     ".": {
-      "types": "./index.d.ts",
-      "esm2022": "./esm2022/marekskopal-ng-scroll-shadow.mjs",
-      "esm": "./esm2022/marekskopal-ng-scroll-shadow.mjs",
-      "default": "./fesm2022/marekskopal-ng-scroll-shadow.mjs",
-      "scss": "./src/styles/styles.scss"
+      "sass": "./src/styles/styles.scss"
     }
   }
 }
