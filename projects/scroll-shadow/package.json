@@ -1,6 +1,6 @@
 {
   "name": "@marekskopal/ng-scroll-shadow",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Angular directive for adding a shadow to scrollable container.",
   "keywords": [
     "angular",
