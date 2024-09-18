@@ -1,24 +1,39 @@
-# ScrollShadow
+# NgScrollShadow
 
-This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.0.
+Angular `[scrollShadow]` directive to add a shadow to begin and end of a vertical scrollable container.
 
-## Code scaffolding
+Unlike the pure CSS solution, this solution uses a wrapper and absolutely positioned shadows that work even if the container contains block elements.
 
-Run `ng generate component component-name --project scroll-shadow` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project scroll-shadow`.
-> Note: Don't forget to add `--project scroll-shadow` or else it will be added to the default project in your `angular.json` file. 
+## Install
 
-## Build
+```bash
+npm install @marekskopal/ng-scroll-shadow
+```
 
-Run `ng build scroll-shadow` to build the project. The build artifacts will be stored in the `dist/` directory.
+Add the styles to your `styles.scss`:
 
-## Publishing
+```scss
+@import "~@marekskopal/ng-scroll-shadow/styles/styles";
+```
 
-After building your library with `ng build scroll-shadow`, go to the dist folder `cd dist/scroll-shadow` and run `npm publish`.
+## Usage
 
-## Running unit tests
+Import the `ScrollShadowDirective` directive in your module or component:
 
-Run `ng test scroll-shadow` to execute the unit tests via [Karma](https://karma-runner.github.io).
+```typescript
+import {ScrollShadowDirective} from "@marekskopal/ng-scroll-shadow";
+```
 
-## Further help
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Add the `scrollShadow` directive to the scrollable container:
+
+```html
+<!-- example -->
+<div style="width: 400px">
+    <div style="height: 200px; overflow-y: auto;" scrollShadow>
+        <div style="height: 200px; width: 800px; background: red">
+            <!-- content -->
+        </div>
+    </div>
+</div>
+```
