@@ -1,27 +1,39 @@
-# ScrollShadow
+# NgScrollShadow
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.4.
+Angular `[scrollShadow]` directive for adding a shadow to begin and end of a vertical scrollable container.
 
-## Development server
+Unlike the pure CSS solution, this solution uses a wrapper and absolutely positioned shadows that work even if the container contains block elements.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Install
 
-## Code scaffolding
+```bash
+npm install @marekskopal/ng-scroll-shadow
+```
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Add the styles to your `styles.scss`:
 
-## Build
+```scss
+@import "~@marekskopal/ng-scroll-shadow/styles/styles";
+```
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Usage
 
-## Running unit tests
+Import the `ScrollShadowDirective` directive in your module or component:
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+```typescript
+import {ScrollShadowDirective} from "@marekskopal/ng-scroll-shadow";
+```
 
-## Running end-to-end tests
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+Add the `scrollShadow` directive to the scrollable container:
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+```html
+<!-- example -->
+<div style="width: 400px">
+    <div style="height: 200px; overflow-y: auto;" scrollShadow>
+        <div style="height: 200px; width: 800px; background: red">
+            <!-- content -->
+        </div>
+    </div>
+</div>
+```

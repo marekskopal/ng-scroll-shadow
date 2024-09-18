@@ -1,6 +1,6 @@
 # NgScrollShadow
 
-Angular `[scrollShadow]` directive to add a shadow to begin and end of a vertical scrollable container.
+Angular `[scrollShadow]` directive for adding a shadow to begin and end of a vertical scrollable container.
 
 Unlike the pure CSS solution, this solution uses a wrapper and absolutely positioned shadows that work even if the container contains block elements.
 

@@ -1,6 +1,19 @@
 {
-  "name": "scroll-shadow",
-  "version": "0.0.1",
+  "name": "@marekskopal/ng-scroll-shadow",
+  "version": "1.0.0",
+  "description": "Angular directive for adding a shadow to scrollable container.",
+  "keywords": [
+    "angular",
+    "directive",
+    "scroll",
+    "shadow"
+  ],
+  "author": "Marek Skopal",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/marekskopal/ng-scroll-shadow.git"
+  },
+  "license": "MIT",
   "peerDependencies": {
     "@angular/common": "^18.2.0",
     "@angular/core": "^18.2.0"
