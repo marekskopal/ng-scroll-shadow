@@ -1,3 +1,8 @@
+:root {
+    --scroll-shaddow-color-from: rgba(0, 0, 0, 0);
+    --scroll-shaddow-color-to: #000000;
+}
+
 .scroll-shadow-wrapper {
     position: relative;
 
@@ -17,12 +22,12 @@
 
     &:before {
         left: 0;
-        background: linear-gradient(270deg, rgba(38, 38, 38, 0) 0%, #262626 100%);
+        background: linear-gradient(270deg, var(--scroll-shaddow-color-from) 0%, var(--scroll-shaddow-color-to) 100%);
     }
 
     &:after {
         right: 0;
-        background: linear-gradient(90deg, rgba(38, 38, 38, 0) 0%, #262626 100%);
+        background: linear-gradient(90deg, var(--scroll-shaddow-color-from) 0%, var(--scroll-shaddow-color-to) 100%);
     }
 
     &.can-scroll-left {
