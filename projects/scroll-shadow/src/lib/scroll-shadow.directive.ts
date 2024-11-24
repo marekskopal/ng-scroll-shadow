@@ -9,7 +9,6 @@ import {
 import {auditTime, fromEvent, Subject, takeUntil} from "rxjs";
 
 @Directive({
-    standalone: true,
     //eslint-disable-next-line @angular-eslint/directive-selector
     selector: '[scrollShadow]',
 })
