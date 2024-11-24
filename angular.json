@@ -3,7 +3,10 @@
   "version": 1,
   "cli": {
     "packageManager": "pnpm",
-    "analytics": "e9c57f89-7405-497b-9873-68e397c62cbb"
+    "analytics": "e9c57f89-7405-497b-9873-68e397c62cbb",
+    "schematicCollections": [
+      "@angular-eslint/schematics"
+    ]
   },
   "newProjectRoot": "projects",
   "projects": {
@@ -36,6 +39,16 @@
               "zone.js",
               "zone.js/testing"
             ]
+          }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "projects/scroll-shadow/**/*.ts",
+              "projects/scroll-shadow/**/*.html"
+            ],
+            "eslintConfig": "projects/scroll-shadow/eslint.config.js"
           }
         }
       }

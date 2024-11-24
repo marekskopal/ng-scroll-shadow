@@ -30,7 +30,7 @@ export class ScrollShadowDirective implements OnInit, AfterContentInit, OnDestro
         'alias': 'canScrollRightClass',
     });
 
-    private readonly destroy$: Subject<void> = new Subject();
+    private readonly destroy$ = new Subject<void>();
 
     private wrapperElement: HTMLElement = this.renderer.createElement('div');
 
