@@ -9,7 +9,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "lint-fix": "ng lint --fix",
-    "pack": "cd dist/scroll-shadow && npm pack"
+    "build-pack": "ng build && cd dist/scroll-shadow && pnpm pack"
   },
   "private": true,
   "dependencies": {
