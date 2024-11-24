@@ -17,18 +17,10 @@ export class ScrollShadowDirective implements OnInit, AfterContentInit, OnDestro
     private readonly el = inject(ElementRef);
     private readonly renderer = inject(Renderer2);
 
-    public readonly $canScrollRightClass = input<string>('can-scroll-right', {
-        'alias': 'canScrollRightClass',
-    });
-    public readonly $canScrollLeftClass = input<string>('can-scroll-left', {
-        'alias': 'canScrollRightClass',
-    });
-    public readonly $auditTimeMs = input<number>(125, {
-        'alias': 'auditTimeMs',
-    });
-    public readonly $wrapperClass = input<string>('scroll-shadow-wrapper', {
-        'alias': 'canScrollRightClass',
-    });
+    public readonly canScrollRightClass = input<string>('can-scroll-right');
+    public readonly canScrollLeftClass = input<string>('can-scroll-left');
+    public readonly auditTimeMs = input<number>(125);
+    public readonly wrapperClass = input<string>('scroll-shadow-wrapper');
 
     private readonly destroy$ = new Subject<void>();
 
@@ -36,14 +28,14 @@ export class ScrollShadowDirective implements OnInit, AfterContentInit, OnDestro
 
     public ngOnInit(): void {
         fromEvent(this.el.nativeElement, 'scroll').pipe(
-            auditTime(this.$auditTimeMs()),
+            auditTime(this.auditTimeMs()),
             takeUntil(this.destroy$),
         ).subscribe(() => {
             this.setClasses();
         });
 
         fromEvent(window, 'resize').pipe(
-            auditTime(this.$auditTimeMs()),
+            auditTime(this.auditTimeMs()),
             takeUntil(this.destroy$),
         ).subscribe(() => {
             this.setClasses();
@@ -65,7 +57,7 @@ export class ScrollShadowDirective implements OnInit, AfterContentInit, OnDestro
         const nativeElement = this.el.nativeElement;
         const parent = this.el.nativeElement.parentNode;
 
-        this.renderer.addClass(this.wrapperElement, this.$wrapperClass());
+        this.renderer.addClass(this.wrapperElement, this.wrapperClass());
         this.renderer.insertBefore(parent, this.wrapperElement, nativeElement);
         this.renderer.removeChild(parent, nativeElement);
         this.renderer.appendChild(this.wrapperElement, nativeElement);
@@ -77,15 +69,15 @@ export class ScrollShadowDirective implements OnInit, AfterContentInit, OnDestro
         const canScrollLeft = nativeElement.scrollLeft > 0;
         const canScrollRight = nativeElement.scrollLeft + nativeElement.clientWidth < nativeElement.scrollWidth;
 
-        this.renderer.removeClass(this.wrapperElement, this.$canScrollRightClass());
-        this.renderer.removeClass(this.wrapperElement, this.$canScrollLeftClass());
+        this.renderer.removeClass(this.wrapperElement, this.canScrollRightClass());
+        this.renderer.removeClass(this.wrapperElement, this.canScrollLeftClass());
 
         if (canScrollRight) {
-            this.renderer.addClass(this.wrapperElement, this.$canScrollRightClass());
+            this.renderer.addClass(this.wrapperElement, this.canScrollRightClass());
         }
 
         if (canScrollLeft) {
-            this.renderer.addClass(this.wrapperElement, this.$canScrollLeftClass());
+            this.renderer.addClass(this.wrapperElement, this.canScrollLeftClass());
         }
     }
 }
