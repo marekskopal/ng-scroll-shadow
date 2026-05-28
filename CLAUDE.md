@@ -14,7 +14,7 @@ Package manager is **pnpm** (configured in `angular.json` → `cli.packageManage
 
 - `pnpm build` — production build via `ng-packagr` → outputs to `dist/scroll-shadow/`
 - `pnpm watch` — development build with watch
-- `pnpm test` — Karma + Jasmine (Chrome launcher)
+- `pnpm test` — Vitest via `@angular/build:unit-test` (jsdom env, zoneless TestBed; specs co-located as `*.spec.ts` next to source)
 - `pnpm lint` / `pnpm lint-fix` — ESLint via `@angular-eslint/builder`
 - `pnpm build-pack` — builds then runs `pnpm pack` inside `dist/scroll-shadow/` to produce a publishable tarball (used to verify the package before publishing to npm)
 
